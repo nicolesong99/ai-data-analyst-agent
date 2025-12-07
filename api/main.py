@@ -7,7 +7,7 @@ from .agent import run_agent
 
 app = FastAPI()
 
-# 方便你以后接前端
+# 以后接前端
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
