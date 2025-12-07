@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+pandas
+matplotlib
+python-multipart
+openai
