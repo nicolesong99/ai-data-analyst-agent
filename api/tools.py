@@ -165,5 +165,5 @@ def op_visualize(df: pd.DataFrame, params: Dict[str, Any]) -> str:
 
     path = os.path.join(OUTPUT_DIR, "chart.png")
     plt.savefig(path)
-    plt.close()
+    plt.close()  # 关闭图像，释放内存
     return path
