@@ -27,17 +27,16 @@ def call_llm(prompt: str) -> Dict[str, Any]:
     调用 LLM，返回 JSON plan。
     """
     resp = client.chat.completions.create(
-        model="gpt-4o-mini",  # 你可以换成别的模型
+        model="gpt-4o-mini",  # 可以换成别的模型
         messages=[{"role": "user", "content": prompt}],
         temperature=0.1,
     )
 
     content = resp.choices[0].message.content
-    # 期待 content 是 JSON 字符串
+    # content 是 JSON 字符串
     try:
         plan = json.loads(content)
     except json.JSONDecodeError:
-        # 如果 LLM 不守规矩，简单 fallback 成 error
         plan = {
             "steps": [
                 {
